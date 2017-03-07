@@ -1,5 +1,5 @@
 # coding: utf-8
-
+# Python 2.7
 import random
 class color:
    PURPLE = '\033[95m'
@@ -235,7 +235,7 @@ def Buy():
 		print "I can't find this item."
 	
 def Help():
-	print color.BOLD + color.GREEN + "BASIC COMMANDS: \ntravel - Go to a new place (costs come money)\nmap - Check your map\nlocation - Info about your current location\ninv - Check your stock\ndemand - Check the price of drugs in your current location\nbuy - Buy drugs\nsell - Sell Drugs " +color.END
+	print color.BOLD + color.GREEN + "BASIC COMMANDS: \ntravel - Go to a new place (costs some money)\nmap - Check your map\nlocation - Info about your current location\ninv - Check your stock\ndemand - Check the price of drugs in your current location\nbuy - Buy drugs\nsell - Sell Drugs " +color.END
 
 def GameLoop():
 	running = True
