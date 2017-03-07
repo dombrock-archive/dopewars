@@ -37,19 +37,19 @@ class Player:
 	_LSX = 0
 
 	def check_inv(self):
-		print ""
+		print " "
 		print color.RED+"I N V E N T O R Y :"+color.END
-		print ""
+		print " "
 		print "Cash:    ", self.cash
-		print ""
+		print " "
 		print "Wheeze:  ", self._Wheeze
 		print "Stimpak: ", self._Stimpak
 		print "Jet:     ", self._Jet
 		print "Kram:    ", self._Kram
 		print "LSX:     ", self._LSX
-		print ""
+		print " "
 		print "----"
-		print ""
+		print " "
 
 class Map:
 	cities = []
@@ -65,52 +65,52 @@ class Map:
 
 	def travel(self, city):
 		self.location = city
-		print ""
+		print " "
 		print color.GREEN+"You Have arrived at ", self.location.name+color.END
-		print ""
+		print " "
 		#set new rates
 		self.upper = round(random.uniform(0.1,2.7),3)
 		self.downer = round(random.uniform(0.1,2.7),3)
 		self.painkiller = round(random.uniform(0.1,2.7),3)
 	
 	def check_demand(self):
-		print ""
+		print " "
 		print color.RED+"D E M A N D :"+color.END
 		print "Current Location: ", self.location.name
-		print ""
+		print " "
 		print "Uppers: ",self.upper,"X"
 		print "Downers: ",self.downer,"X"
 		print "PainKillers: ",self.painkiller,"X"
-		print ""
+		print " "
 		print "Wheeze: ",float(Wheeze.price)*float(self.downer),"$"
 		print "Stimpak: ",float(Stimpak.price)*float(self.painkiller),"$"
 		print "Jet: ",float(Jet.price)*float(self.upper),"$"
 		print "----"
-		print ""
+		print " "
 
 	def check_location(self):
-		print ""
+		print " "
 		print color.RED+"L O C A T I O N :"+color.END
 		print "Current Location: ", self.location.name
-		print ""
+		print " "
 		print "Location Information: "
 		print self.location.info
-		print ""
+		print " "
 		print "----"
-		print ""
+		print " "
 
 	def check_map(self):
-		print ""
+		print " "
 		print color.RED+"M A P :"+color.END
-		print ""
+		print " "
 		print "Current Location: ", self.location.name
-		print ""
+		print " "
 		print self.cities[0].name
 		print self.cities[1].name
 		print self.cities[2].name
-		print ""
+		print " "
 		print "----"
-		print ""
+		print " "
 
 def Travel():
 	cost = round(random.uniform(0.1,20.0),3)
@@ -125,15 +125,15 @@ def Travel():
 				city = m1.cities[x]
 		if(found == False):
 			print "I can't find this place."
-			print ""
+			print " "
 		else:
 			print "Traveling to ", destination," for",cost,"$";
-			print ""
+			print " "
 			p1.cash = p1.cash - cost
 			m1.travel(city)
 	else:
 		print "you are too broke to travel! Try again later..."
-		print ""
+		print " "
 
 def Sell():
 	found = False
@@ -142,10 +142,10 @@ def Sell():
 	amt = raw_input("Ok, how much do you want to sell?: ")
 	if(amt.isdigit()==True):
 		print "Selling",amt,"",item,"."
-		print ""
+		print " "
 	else:
 		print "Please enter an integer for the amount."
-		print ""
+		print " "
 
 	if (item == "Wheeze"):
 		found = True
@@ -154,10 +154,10 @@ def Sell():
 			p1._Wheeze = p1._Wheeze -int(amt)
 			p1.cash = p1.cash + (price)
 			print "Sold",item,"for",price
-			print ""
+			print " "
 		else:
 			print "You don't have enough of that!"
-			print ""
+			print " "
 
 	elif (item == "Jet"):
 		found = True
@@ -168,7 +168,7 @@ def Sell():
 			print "Sold",item,"for",price
 		else:
 			print "You don't have enough of that!"
-			print ""
+			print " "
 
 	elif (item == "Stimpak"):
 		found = True
@@ -179,7 +179,7 @@ def Sell():
 			print "Sold",item,"for",price
 		else:
 			print "You don't have enough of that!"
-			print ""
+			print " "
 
 	else:
 		print "I can't find this item."
@@ -192,10 +192,10 @@ def Buy():
 	amt = raw_input("Ok, how much do you want to buy?: ")
 	if(amt.isdigit()==True):
 		print "Buying",float(amt),"",item,"."
-		print ""
+		print " "
 	else:
 		print "Please enter an integer for the amount."
-		print ""
+		print " "
 
 	if (item == "Wheeze"):
 		found = True
@@ -204,10 +204,10 @@ def Buy():
 			p1._Wheeze = p1._Wheeze +int(amt)
 			p1.cash = p1.cash - (price)
 			print "Bought",item,"for",price
-			print ""
+			print " "
 		else:
 			print "You don't have enough cash to buy that!"
-			print ""
+			print " "
 
 	elif (item == "Jet"):
 		found = True
@@ -218,7 +218,7 @@ def Buy():
 			print "Bought",item,"for",price
 		else:
 			print "You don't have enough cash to buy that!"
-			print ""
+			print " "
 
 	elif (item == "Stimpak"):
 		found = True
@@ -229,7 +229,7 @@ def Buy():
 			print "Bought",item,"for",price
 		else:
 			print "You don't have enough cash to buy that!"
-			print ""
+			print " "
 
 	else:
 		print "I can't find this item."
@@ -269,7 +269,7 @@ def GameLoop():
 		#unknown command
 		else:
 			print "Unknown Command!"
-			print ""
+			print " "
 
 		#print (i)
 #ITEMS
@@ -290,6 +290,6 @@ m1 = Map(Arrival,Victory,Arrival,Boost)
 print color.BOLD + color.CYAN + "W E L C O M E  T O  C Y B E R - D O P E - W A R S  A L P H A" +color.END
 print color.BOLD + color.YELLOW + "A Cyber-Punk Drug Dealing Sim By Mathieu Dombrock" +color.END
 Help()
-print ""
-print ""
+print " "
+print " "
 GameLoop()
